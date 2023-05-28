@@ -1,0 +1,118 @@
+@import url("styles/header.css");
+
+:root {
+    --cor-branca: #FFF;
+    --cor-cinza: #808080;
+    --cor-preta: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url("/storage/assets/background.png") no-repeat center center fixed;
+    background-size: 100vw 100vh;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    padding-bottom: 160px;
+    height: 100%;
+}
+
+.container__centralizador {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: transform 0.3s ease;
+    width: 75%;
+    -webkit-backdrop-filter: blur(0.5px);
+    backdrop-filter: blur(0.5px);
+    background: rgba(255, 255, 255, 0.5);
+    min-height: 590px;
+}
+/** Header */
+.header {
+    background-color: var(--cor-branca);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.header__discografia{
+    font-size: 40px;
+    color: var(--cor-cinza)
+}
+/** Header */
+
+/** Pesquisa */
+.pesquisar {
+    padding: 16px;
+}
+
+.pesquisar__inputEbotao {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pesquisar__label {
+    padding: 8px;
+    display: block;
+}
+
+.pesquisar__input {
+    flex-grow: 9;
+    padding: 8px 24px;
+    border-radius: 24px;
+    border: none;
+}
+
+.pesquisar__botao {
+    flex-grow: 1;
+    background-color: #5a7abf;
+    color: var(--cor-branca);
+    padding: 12px 0;
+    border: none;
+    border-radius: 24px;
+}
+/** Pesquisa */
+
+/** Albuns e faixas */
+.albunsEfaixas {
+    padding: 0px 24px;
+}
+
+.albunsEfaixas__titulo{
+    font-weight: 700;
+    padding: 8px 0px 16px 0px;
+}
+
+.faixas__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.faixas__header--numeroEfaixa {
+    display: flex;
+    gap: 36px;
+}
+
+
+.faixas__opcao {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    align-items: center;
+}
+
+.faixas__opcao--numeroEfaixa {
+    display: flex;
+    gap: 36px;
+    
+}
