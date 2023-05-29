@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('faixas', function (Blueprint $table) {
+        Schema::create('tracks', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 50);
-            $table->foreign('album_id')->references('id')->on('albuns')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('name', 50);
+            $table->foreignId('album_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
