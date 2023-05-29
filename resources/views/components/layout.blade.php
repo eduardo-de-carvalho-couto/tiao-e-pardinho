@@ -12,6 +12,22 @@
             <div class="p-5 bg-dark text-white mb-3">
                 <h1>{{ $title }}</h1>
             </div>
+
+            @isset($mensagemSucesso)
+                <div class="alert alert-success">
+                    {{ $mensagemSucesso }}
+                </div>
+            @endisset
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
     
             <form action="{{route('albums.store')}}" method="POST">
                 @csrf

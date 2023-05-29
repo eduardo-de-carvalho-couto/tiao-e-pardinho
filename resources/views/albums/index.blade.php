@@ -1,4 +1,4 @@
-<x-layout title="Álbuns">
+<x-layout title="Álbuns" :mensagem-sucesso="$mensagemSucesso">
     <ul class="list-group">
         @foreach ($albums as $album)
             <li class="list-group-item d-flex justify-content-between align-items-center">

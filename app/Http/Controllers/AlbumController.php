@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AlbumFormRequest;
 use App\Models\Album;
 use Illuminate\Http\Request;
 
@@ -12,19 +13,23 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
+        $albums = Album::query()->orderBy('created_at', 'desc')->get();
 
-        return view('albums.index')->with('albums', $albums);
+        $mensagemSucesso = session('mensagem.sucesso');
+
+        return view('albums.index')->with('albums', $albums)
+            ->with('mensagemSucesso', $mensagemSucesso);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AlbumFormRequest $request)
     {
-        Album::create(['name' => $request->name]);
+        $album = Album::create(['name' => $request->name]);
 
-        return to_route('albums.index');
+        return to_route('albums.index')
+            ->with('mensagem.sucesso', "Álbum '{$album->name}' adicionada com sucesso");;
     }
 
     /**
@@ -43,7 +48,7 @@ class AlbumController extends Controller
         $album->fill($request->all());
         $album->save();
 
-        return to_route('albums.index');
+        return to_route('albums.index')->with('mensagem.sucesso', "Álbum '{$album->name}' atualizado com sucesso");;
     }
 
     /**
@@ -53,6 +58,6 @@ class AlbumController extends Controller
     {
         $album->delete();
 
-        return to_route('albums.index');
+        return to_route('albums.index')->with('mensagem.sucesso', 'Álbum removido com sucesso');
     }
 }
