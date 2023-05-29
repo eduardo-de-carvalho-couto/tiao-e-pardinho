@@ -1,0 +1,1 @@
+<x-edit-layout title="Álbum" name="{{$album->name}}" id="{{$album->id}}" />
