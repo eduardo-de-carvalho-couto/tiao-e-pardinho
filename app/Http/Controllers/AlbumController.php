@@ -32,8 +32,6 @@ class AlbumController extends Controller
                                     ->get();
         }
 
-        
-
         return view('search.index')->with('albums', $albums);
     }
 
