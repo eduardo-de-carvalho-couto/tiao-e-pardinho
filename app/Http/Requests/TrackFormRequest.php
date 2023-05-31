@@ -23,7 +23,7 @@ class TrackFormRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'number' => 'required_if:update,1|integer',
+            'number' => 'required_if:update,1|integer|max:9999',
             'duration' => 'required_if:update,1|regex:/^([0-5]?[0-9]):([0-5]?[0-9])$/',
         ];
     }

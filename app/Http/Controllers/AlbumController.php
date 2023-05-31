@@ -21,6 +21,22 @@ class AlbumController extends Controller
             ->with('mensagemSucesso', $mensagemSucesso);
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $albums = Album::query()->with('tracks')->get();
+
+        if ($keyword){
+            $albums = Album::query()->where('name', 'LIKE', '%'.$keyword.'%')
+                                    ->with('tracks')
+                                    ->get();
+        }
+
+        
+
+        return view('search.index')->with('albums', $albums);
+    }
+
     /**
      * Store a newly created resource in storage.
      */

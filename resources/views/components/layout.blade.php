@@ -34,7 +34,7 @@
                 @csrf
         
                 <div class="mb-5">
-                    <h5>Adicione um álbum:</h5>
+                    <h5>Adicione {{$adicione}}:</h5>
                     <div class="row">
                         <div class="col-4">
                             <label for="album" class="form-label">Nome:</label>

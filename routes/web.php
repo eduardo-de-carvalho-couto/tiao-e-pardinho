@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [SearchController::class, 'index'])->name('search.index');
+Route::get('/', [AlbumController::class, 'search'])->name('search.index');
 
 Route::resource('albums', AlbumController::class)->except(['show', 'create']);
 Route::resource('albums.tracks', TrackController::class)->except(['show', 'create']);

@@ -11,7 +11,6 @@ body {
 
 .container {
     position: relative;
-    padding-bottom: 160px;
     height: 100%;
 }
 
@@ -22,9 +21,13 @@ body {
     transform: translate(-50%);
     transition: transform 0.3s ease;
     width: 75%;
+}
+
+.teste {
+    padding-bottom: 8px;
     -webkit-backdrop-filter: blur(0.5px);
     backdrop-filter: blur(0.5px);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     min-height: 590px;
 }
 /** Header */
@@ -78,6 +81,12 @@ body {
 /** Pesquisa */
 
 /** Albuns e faixas */
+
+.faixas__header--duracao{
+    display: flex;
+    justify-content: end;
+}
+
 .albunsEfaixas {
     padding: 0px 24px;
 }
@@ -91,12 +100,14 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
+    margin-bottom: 8px;
 }
 
 .faixas__header--numeroEfaixa {
     display: flex;
     gap: 36px;
 }
+
 
 
 .faixas__opcao {
@@ -109,5 +120,12 @@ body {
 .faixas__opcao--numeroEfaixa {
     display: flex;
     gap: 36px;
-    
+    position: relative;
+    align-items: center;
+}
+
+.faixas_opcao--nome {
+    position: absolute;
+    width: 260px;
+    left: 54px;
 }

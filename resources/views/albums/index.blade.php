@@ -1,4 +1,4 @@
-<x-layout title="Álbuns" :mensagem-sucesso="$mensagemSucesso" :update="false" :action="route('albums.store')">
+<x-layout title="Álbuns" :mensagem-sucesso="$mensagemSucesso" :adicione="'um álbum'" :update="false" :action="route('albums.store')">
 
     <ul class="list-group">
         @foreach ($albums as $album)
