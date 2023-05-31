@@ -1,6 +1,6 @@
 # Tião Carreiro e Pardinho
 
-As opções de Inserir, Atualizar e Deletar estão no path /album. Decide deixar essa parte separado da página que visualiza albuns pesquisados por palavra chave e suas faixas.
+As opções de Inserir, Atualizar e Deletar estão no path /album. Decidi deixar essa parte separado da página que visualiza albuns pesquisados por palavra chave e suas faixas.
 
 ## Passo a passo para rodar o projeto
 Clone o projeto
