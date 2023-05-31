@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\TrackController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('site.index');
-});
+Route::get('/', [SearchController::class, 'index'])->name('search.index');
 
 Route::resource('albums', AlbumController::class)->except(['show', 'create']);
+Route::resource('albums.tracks', TrackController::class)->except(['show', 'create']);

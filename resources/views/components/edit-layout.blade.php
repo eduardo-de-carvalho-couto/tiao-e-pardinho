@@ -8,20 +8,52 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+    <div class="container position-relative">
         <div class="p-5 bg-dark text-white mb-3">
             <h1>Editar {{ $title }}</h1>
         </div>
 
-        <form action="{{route('albums.update', $id)}}" method="POST">
+        @isset($mensagemSucesso)
+                <div class="alert alert-success">
+                    {{ $mensagemSucesso }}
+                </div>
+            @endisset
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @yield('link-voltar')
+
+        <form action="{{ $action }}" method="POST">
             @csrf
             @method('PUT')
     
-            <div class="mb-3">
-                <label for="album" class="form-label">Edite o {{$name}}:</label>
-                <div class="d-flex">
-                    <input type="text" class="form-control me-2" id="album" name="name" value="{{old('name')}}">
-                    <button type="submit" class="btn btn-primary">Editar</button>
+            <div class="mb-5">
+                <h5>Adicione um álbum:</h5>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="album" class="form-label">Nome:</label>
+                        <input type="text" class="form-control me-2" id="album" name="name" @isset($nome)value="{{$nome}}"@endisset"">
+                    </div>
+                    @if($updateTrack)
+                        <div class="col-1">
+                            <label for="number" class="form-label">Número:</label>
+                            <input type="text" class="form-control me-2" id="number" name="number" @isset($number)value="{{$number}}"@endisset">
+                        </div>
+                        <div class="col-1">
+                            <label for="duration" class="form-label">Duração:</label>
+                            <input type="text" class="form-control me-2" id="duration" name="duration" @isset($duration)value="{{$duration}}"@endisset">
+                        </div> 
+                    @endif
+                    <div class="col-1 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </div>
                 </div>
             </div>
         </form>

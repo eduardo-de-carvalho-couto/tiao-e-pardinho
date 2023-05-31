@@ -15,130 +15,41 @@
                     <h2 class="header__discografia">Discografia</h2>
                 </div>
                 <div class="pesquisar">
-                    <form action="">
+                    <form action="{{route('search.index')}}" method="GET">
                         <label for="palavra" class="pesquisar__label">Digite uma palavra chave:</label>
                         <div class="pesquisar__inputEbotao">
-                            <input type="text" id="palavra" class="pesquisar__input">
+                            <input type="text" id="palavra" name="keyword" class="pesquisar__input">
                             <button class="pesquisar__botao">Pesquisar</button>
                         </div>
                     </form>
                 </div>
-                <div class="albunsEfaixas">
-                    <h4 class="albunsEfaixas__titulo">Álbum: Rei do Gado, 1961</h4>
-                    <ul class="faixas">
-                        <li class="faixas__header">
-                            <ul class="faixas__header--numeroEfaixa">
-                                <li>N°</li>
-                                <li>Faixa</li>
-                            </ul>
-                            <ul class="faixas__header--duracao">
-                                <li>Duração</li>
-                            </ul>
-                        </li>
-    
-    
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-    
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                        <li class="faixas__opcao">
-                            <ul class="faixas__opcao--numeroEfaixa">
-                                <li>11</li>
-                                <li>Minas Gerais</li>
-                            </ul>
-                            <ul class="faixas__opcao--duracao">
-                                <li>3:47</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                @foreach ($albums as $album)
+                    <div class="albunsEfaixas">
+                        <h4 class="albunsEfaixas__titulo">{{$album->name}}</h4>
+                        <ul class="faixas">
+                            <li class="faixas__header">
+                                <ul class="faixas__header--numeroEfaixa">
+                                    <li>N°</li>
+                                    <li>Faixa</li>
+                                </ul>
+                                <ul class="faixas__header--duracao">
+                                    <li>Duração</li>
+                                </ul>
+                            </li>
+        
+        
+                            <li class="faixas__opcao">
+                                <ul class="faixas__opcao--numeroEfaixa">
+                                    <li>11</li>
+                                    <li>Minas Gerais</li>
+                                </ul>
+                                <ul class="faixas__opcao--duracao">
+                                    <li>3:47</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                @endforeach
     
                 <div class="albunsEfaixas">
                     <h4 class="albunsEfaixas__titulo">Álbum: Rei do Gado, 1961</h4>

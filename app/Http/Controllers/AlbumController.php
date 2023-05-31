@@ -43,12 +43,12 @@ class AlbumController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Album $album, Request $request)
+    public function update(Album $album, AlbumFormRequest $request)
     {
         $album->fill($request->all());
         $album->save();
 
-        return to_route('albums.index')->with('mensagem.sucesso', "Álbum '{$album->name}' atualizado com sucesso");;
+        return to_route('albums.index')->with('mensagem.sucesso', "Álbum '{$album->name}' atualizado com sucesso");
     }
 
     /**
